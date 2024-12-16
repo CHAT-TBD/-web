@@ -1,28 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>chat tbd</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat tbd</title>
+    <style>
+        /* ตั้งค่าพื้นฐาน */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 70px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* โลโก้ทรงกลม */
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #00d4ff, #0077b6);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .logo img {
+            width: 80%;
+            border-radius: 50%;
+        }
+
+        /* หัวข้อ */
+        .title {
+            font-size: 2rem;
+            margin: 10px 0;
+            color: #00d4ff;
+        }
+
+        /* คำอธิบาย */
+        .description {
+            font-size: 1rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: #d1d1d1;
+        }
+
+        /* ปุ่ม */
+        .btn-next {
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #00d4ff;
+            color: #0f2027;
+            transition: all 0.3s ease;
+        }
+        .btn-next:hover {
+            background: #0077b6;
+            color: #fff;
+        }
+        .btn-next:active {
+            transform: scale(0.95);
+        }
+
+        /* หน้าจอโหลด */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #00d4ff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        .loading-screen.visible {
+            opacity: 1;
+            visibility: visible;
+
+
+        }
+    </style>
 </head>
 <body>
-  <div class="chat-container">
-    <div class="chat-header">
-      <h2>CHAT TBD 0.1</h2>
-      <div class="language-select">
-        <button id="lang-en" class="lang-button active">English</button>
-        <button id="lang-th" class="lang-button">ไทย</button>
-      </div>
+    <!-- หน้าจอโหลด -->
+    <div class="loading-screen" id="loadingScreen">
+        Loading...
     </div>
-    <div class="chat-body" id="chat-body">
-      <!-- Messages will appear here -->
+
+
+    
+    <div class="container">
+
+        <!-- โลโก้ -->
+        <div class="logo">
+            <img src="https://i.postimg.cc/vZ3K4K7D/1-20241214-153021-0000.png" alt="Logo">
+        </div>
+        
+        <!-- หัวข้อ -->
+        <h1 class="title">CHAT TBD 0.5</h1>
+        <!-- คำอธิบาย -->
+        <p class="description">
+            Hello, I'm Chat tbd version 0.5 Beta. I can do many things but may not be at full efficiency. If you want to contact us about a problem, you can continue to DOGDEV
+        </p>
+        <!-- ปุ่ม -->
+        <button class="btn-next" id="startButton" onclick="startLoading()">OPEN CHAT</button>
+
     </div>
-    <div class="chat-footer">
-      <input type="text" id="user-input" placeholder="Type a message...">
-      <button id="send-button">📨</button>
-    </div>
-  </div>
-  <script src="script.js"></script>
+
+
+    <script>
+        function startLoading() {
+            const startButton = document.getElementById('startButton');
+            const loadingScreen = document.getElementById('loadingScreen');
+
+            startButton.style.display = 'none'; // ซ่อนปุ่ม
+            loadingScreen.classList.add('visible'); // แสดงหน้าจอโหลด
+
+            setTimeout(() => {
+                window.location.href = 'chat.html'; // เปลี่ยนหน้าไปยัง chat.html
+            }, 2000); // แสดงหน้าจอโหลดเป็นเวลา 2 วินาที
+        }
+    </script>
 </body>
 </html>
