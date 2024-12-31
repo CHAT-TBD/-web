@@ -6,8 +6,9 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(45deg, #000000 4%, #fff, #000);
   color: #ffffff;
+  
 }
 
 /* Chat Container */
@@ -19,9 +20,9 @@ body {
   height: 85vh;
   border-radius: 15px;
   background: rgba(20, 20, 20, 0.9);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 255, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgb(0, 0, 0, 0.4);
   overflow: hidden;
-  border: 1px solid rgba(0, 255, 255, 0.2);
+  border: 1px solid rgb(0, 0, 0, 0.2);
 }
 
 /* Header Styling */
@@ -30,8 +31,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  background: linear-gradient(135deg, #007991, #78ffd6);
-  background-image: url('https://i.postimg.cc/g2nVKBFx/Screenshot-20241214-152909-Canva.jpg');
+  background: radial-gradient(circle 280px at 0% 0%, #444444, #0c0d0d);
+  background-image: url('https://img2.pic.in.th/pic/1000057687.jpg');
   background-size: cover;
   background-position: center;
   color: #ffffff;
@@ -60,7 +61,7 @@ body {
 .lang-button {
   background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
-  border: 1px solid rgba(0, 255, 255, 0.4);
+  border: 1px solid rgb(0, 0, 0, 0.4);
   border-radius: 15px;
   padding: 5px 15px;
   font-size: 0.9rem;
@@ -69,13 +70,13 @@ body {
 }
 
 .lang-button.active {
-  background: rgba(0, 255, 255, 0.6);
+  background: rgb(255, 255, 255, 0.6);
   color: #000000;
   border: none;
 }
 
 .lang-button:hover {
-  background: rgba(0, 255, 255, 0.6);
+  background: rgb(255, 255, 255, 0.6);
   color: #000000;
 }
 
@@ -88,7 +89,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background-image: url('https://i.postimg.cc/Rh1Tt3t4/20241214-153823-0000.png');
+  background-image: url('https://img2.pic.in.th/pic/1000058015.jpg');
 }
 
 /* Message Styling */
@@ -108,13 +109,13 @@ body {
 }
 .message.user {
   align-self: flex-end;
-  background: linear-gradient(135deg, #78ffd6, #007991);
+  background: linear-gradient(45deg, #000000 4%, #666666, #000);
   border-top-right-radius: 5px;
 }
 
 .message.bot {
   align-self: flex-start;
-  background: linear-gradient(135deg, #007991, #78ffd6);
+  background: linear-gradient(45deg, #000000 4%, #666666, #000);
   border-top-left-radius: 5px;
 }
 
@@ -129,7 +130,7 @@ body {
   display: flex;
   align-items: center;
   padding: 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgb(0, 0, 0, 0.2);
   background: rgba(20, 20, 20, 0.9);
 }
 
@@ -147,19 +148,19 @@ body {
 
 .chat-footer button {
   margin-left: 10px;
-  background: linear-gradient(135deg, #007991, #78ffd6);
-  color: white;
+  background: linear-gradient(45deg, #000000 4%, #ababab, #000);
+  color: black;
   border: none;
   border-radius: 50%;
   padding: 12px;
   cursor: pointer;
   font-size: 1.2rem;
-  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+  box-shadow: 0 5px 15px rgb(255, 255, 255, 0.4);
   transition: 0.3s;
 }
 
 .chat-footer button:hover {
-  background: linear-gradient(135deg, #78ffd6, #007991);
+  background: linear-gradient(45deg, #000000 4%, #ababab, #000);
   transform: scale(1.1);
 }
 
@@ -176,7 +177,7 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 2px solid rgba(0, 255, 255, 0.5);
+  border: 2px solid rgb(255, 255, 255, 0.5);
 }
 
 .thinking .dots {
@@ -188,7 +189,7 @@ body {
   display: inline-block;
   width: 8px;
   height: 8px;
-  background-color: #00ffff;
+  background-color: #ffffff;
   border-radius: 50%;
   animation: blink 1.5s infinite ease-in-out;
 }
