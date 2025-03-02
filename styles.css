@@ -1,13 +1,17 @@
-body {
-  font-family: 'Roboto', sans-serif;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(45deg, #000000 4%, #fff, #000);
+  background: linear-gradient(45deg, #000000 4%, #ffffff, #000);
   color: #ffffff;
   overflow: hidden;
 }
@@ -16,8 +20,8 @@ body {
 .chat-container {
   display: flex;
   flex-direction: column;
-  width: 100vw; /* เต็มจอ */
-  height: 100vh; /* เต็มจอ */
+  width: 100vw; 
+  height: 100vh; 
   border-radius: 0;
   background: rgba(20, 20, 20, 0.9);
   box-shadow: none;
@@ -30,22 +34,21 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
-  background: radial-gradient(circle 280px at 0% 0%, #444444, #0c0d0d);
+  padding: 10px;
+  background: radial-gradient(circle at 0% 0%, #444444, #0c0d0d);
   background-image: url('https://img2.pic.in.th/pic/1000057687.jpg');
   background-size: cover;
   background-position: center;
   color: #ffffff;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
 /* Chat Body */
 .chat-body {
   flex: 1;
-  padding: 15px;
+  padding: 10px;
   overflow-y: auto;
-  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -58,12 +61,12 @@ body {
 .message {
   display: flex;
   align-items: flex-end;
-  max-width: 70%;
-  padding: 15px;
-  border-radius: 20px;
+  max-width: 75%;
+  padding: 10px;
+  border-radius: 15px;
   font-size: 1rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .message.user {
@@ -83,7 +86,6 @@ body {
   display: flex;
   align-items: center;
   padding: 10px;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
   background: rgba(20, 20, 20, 0.9);
   position: absolute;
   bottom: 0;
@@ -92,14 +94,13 @@ body {
 
 .chat-footer input {
   flex: 1;
-  padding: 15px;
+  padding: 12px;
   border: none;
-  border-radius: 25px;
+  border-radius: 20px;
   outline: none;
   background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   font-size: 1rem;
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .chat-footer button {
@@ -108,10 +109,9 @@ body {
   color: black;
   border: none;
   border-radius: 50%;
-  padding: 12px;
+  padding: 10px;
   cursor: pointer;
-  font-size: 1.2rem;
-  box-shadow: 0 5px 15px rgb(255, 255, 255, 0.4);
+  font-size: 1rem;
   transition: 0.3s;
 }
 
@@ -120,10 +120,53 @@ body {
 }
 
 /* Responsive Design */
+@media (max-width: 768px) {
+  .chat-header {
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  .message {
+    max-width: 85%;
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .chat-footer input {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .chat-footer button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
+
 @media (max-width: 480px) {
   .chat-container {
     width: 100vw;
     height: 100vh;
-    border-radius: 0;
+  }
+
+  .chat-header {
+    font-size: 0.9rem;
+    padding: 5px;
+  }
+
+  .message {
+    max-width: 90%;
+    font-size: 0.85rem;
+    padding: 6px;
+  }
+
+  .chat-footer input {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .chat-footer button {
+    font-size: 0.85rem;
+    padding: 6px;
   }
 }
