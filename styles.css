@@ -1,137 +1,183 @@
-/* รีเซ็ตค่า CSS */
-* {
+body {
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Orbitron', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw;
-  background: linear-gradient(135deg, #000000, #0a0a0a, #121212);
-  color: #00ffcc;
-  overflow: hidden;
+  background: linear-gradient(45deg, #000000 4%, #fff, #000);
+  color: #ffffff;
+  
 }
 
 /* Chat Container */
 .chat-container {
   display: flex;
   flex-direction: column;
-  width: 90vw;
-  max-width: 450px;
+  width: 100%;
+  max-width: 420px;
   height: 85vh;
   border-radius: 15px;
-  background: rgba(15, 15, 15, 0.95);
-  box-shadow: 0 0 15px rgba(0, 255, 204, 0.6);
+  background: rgba(20, 20, 20, 0.9);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgb(0, 0, 0, 0.4);
   overflow: hidden;
-  border: 2px solid rgba(0, 255, 204, 0.5);
+  border: 1px solid rgb(0, 0, 0, 0.2);
 }
 
 /* Header Styling */
 .chat-header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 15px;
-  background: linear-gradient(45deg, #00ffcc, #003333);
-  color: #000;
-  font-size: 1.5rem;
+  background: radial-gradient(circle 280px at 0% 0%, #444444, #0c0d0d);
+  background-image: url('https://img2.pic.in.th/pic/1000057687.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  font-size: 1.4rem;
   font-weight: bold;
-  text-shadow: 0 0 10px #00ffcc;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+
+.language-select {
+  display: flex;
+  gap: 5px;
+}
+
+.lang-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgb(0, 0, 0, 0.4);
+  border-radius: 15px;
+  padding: 5px 15px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lang-button.active {
+  background: rgb(255, 255, 255, 0.6);
+  color: #000000;
+  border: none;
+}
+
+.lang-button:hover {
+  background: rgb(255, 255, 255, 0.6);
+  color: #000000;
 }
 
 /* Chat Body */
 .chat-body {
   flex: 1;
-  padding: 15px;
+  padding: 10px;
   overflow-y: auto;
+  background-color: rgb(0, 0, 0, 0.8); /* Semi-transparent background */
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  background: url('https://img2.pic.in.th/pic/cyberpunk.jpg'); /* เปลี่ยนเป็นพื้นหลัง Cyberpunk */
-  background-size: cover;
-  background-position: center;
+  gap: 10px;
+  background-image: url('https://img2.pic.in.th/pic/1000058015.jpg');
 }
 
 /* Message Styling */
 .message {
   display: flex;
   align-items: flex-end;
-  max-width: 75%;
-  padding: 12px;
-  border-radius: 12px;
-  font-size: 1rem;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  box-shadow: 0 0 8px rgba(0, 255, 204, 0.4);
-  transition: 0.3s ease-in-out;
+  gap: 10px;
+  max-width: 70%;
+  padding: 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  word-wrap: break-word; /* ให้ข้อความตัดบรรทัด */
+  overflow-wrap: break-word; /* รองรับการตัดคำ */
+  box-sizing: border-box; /* ป้องกันปัญหาขนาดเกิน */
+  flex-shrink: 0; /* ป้องกันการหดตัว */
 }
-
 .message.user {
   align-self: flex-end;
-  background: linear-gradient(45deg, #00ffcc, #003333);
+  background: linear-gradient(45deg, #000000 4%, #666666, #000);
   border-top-right-radius: 5px;
-  color: black;
 }
 
 .message.bot {
   align-self: flex-start;
-  background: linear-gradient(45deg, #ff0099, #330033);
+  background: linear-gradient(45deg, #000000 4%, #666666, #000);
   border-top-left-radius: 5px;
+}
+
+.message img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
 /* Chat Footer */
 .chat-footer {
   display: flex;
   align-items: center;
-  padding: 12px;
+  padding: 10px;
+  border-top: 1px solid rgb(0, 0, 0, 0.2);
   background: rgba(20, 20, 20, 0.9);
-  position: absolute;
-  bottom: 0;
-  width: 100%;
 }
 
 .chat-footer input {
   flex: 1;
   padding: 12px;
-  border: 2px solid rgba(0, 255, 204, 0.5);
-  border-radius: 20px;
+  border: none;
+  border-radius: 25px;
   outline: none;
   background: rgba(255, 255, 255, 0.1);
-  color: #00ffcc;
-  font-size: 1rem;
+  color: #ffffff;
+  font-size: 0.9rem;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .chat-footer button {
-  margin-left: 12px;
-  background: linear-gradient(45deg, #00ffcc, #003333);
+  margin-left: 10px;
+  background: linear-gradient(45deg, #000000 4%, #ababab, #000);
   color: black;
-  border: 2px solid #00ffcc;
+  border: none;
   border-radius: 50%;
-  padding: 10px;
+  padding: 12px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  box-shadow: 0 5px 15px rgb(255, 255, 255, 0.4);
   transition: 0.3s;
-  box-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
 }
 
 .chat-footer button:hover {
-  background: linear-gradient(45deg, #ff0099, #330033);
+  background: linear-gradient(45deg, #000000 4%, #ababab, #000);
   transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(255, 0, 153, 0.6);
 }
 
-/* Animation for Thinking */
+/* Thinking Animation */
 .thinking {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 10px;
   max-width: 70%;
+}
+
+.thinking img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid rgb(255, 255, 255, 0.5);
 }
 
 .thinking .dots {
@@ -143,7 +189,7 @@ body {
   display: inline-block;
   width: 8px;
   height: 8px;
-  background-color: #00ffcc;
+  background-color: #ffffff;
   border-radius: 50%;
   animation: blink 1.5s infinite ease-in-out;
 }
@@ -166,45 +212,11 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .chat-container {
-    width: 95vw;
+    width: 100%;
     height: 90vh;
-  }
-  .chat-header {
-    font-size: 1.2rem;
-  }
-  .message {
-    max-width: 85%;
-    font-size: 0.9rem;
-  }
-  .chat-footer input {
-    font-size: 0.9rem;
-  }
-  .chat-footer button {
-    font-size: 0.9rem;
+    border-radius: 0;
   }
 }
 
-@media (max-width: 480px) {
-  .chat-container {
-    width: 100vw;
-    height: 100vh;
-    border-radius: 0;
-  }
-  .chat-header {
-    font-size: 1rem;
-  }
-  .message {
-    max-width: 90%;
-    font-size: 0.85rem;
-  }
-  .chat-footer input {
-    font-size: 0.85rem;
-    padding: 8px;
-  }
-  .chat-footer button {
-    font-size: 0.85rem;
-    padding: 6px;
-  }
-}
